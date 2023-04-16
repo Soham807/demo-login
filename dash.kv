@@ -1,0 +1,208 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<ScreenDash>
+    name: "dash"
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+        ScreenManager:
+            id: scr
+            transition: NoTransition()
+            
+            
+            
+            MDScreen:
+                name: "home"
+                MDLabel:
+                    text: "Home"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+                
+
+
+
+            MDScreen:
+                name: "form"
+                MDLabel:
+                    text: "Form"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+
+
+
+            MDScreen:
+                name: "history"
+                MDLabel:
+                    text: "History"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+
+
+
+            MDScreen:
+                name: "queries"
+                MDLabel:
+                    text: "Queries"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+        
+        
+        NavBar:
+            size_hint: .85, .1
+            pos_hint: {"center_x": 0.5, "center_y": 0.1}
+            elevation: 4
+            md_bg_color: 1,1,1,1
+            radius: [16]
+            MDGridLayout:
+                cols: 4
+                size_hint_x: 0.9
+                spacing: 30
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                
+                
+                MDIconButton:
+                    id: home_icon
+                    icon: "home"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "home"
+
+
+                MDIconButton:
+                    id: form_icon
+                    icon: "form-select"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "form"
+
+
+                MDIconButton:
+                    id: history_icon
+                    icon: "history"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "history"
+
+                MDIconButton:
+                    id: queries_icon
+                    icon: "database-search"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "queries"
+
+
+
+
+
+
+
+
+                    <Manager>:
+    id: screen_manager
+    screen_main = screen_main
+    screen_login = screen_login
+    screen_signup = screen_signup
+    screen_signup2 = screen_signup2
+    screen_dash = screen_dash
+
+    ScreenMain:
+        id: screen_main
+        name: "main_screen"
+        manager: screen_manager
+
+    ScreenLogin:
+        id: screen_login
+        name: "login_screen"
+        manager: screen_manager
+
+    ScreenSignup:
+        id: screen_signup
+        name: "signup_screen"
+        manager: screen_manager
+
+    ScreenSignup2:
+        id: screen_signup2
+        name: "signup2_screen"
+        manager: screen_manager
+
+    ScreenDash:
+        id: screen_dash
+        name: "dash_screen"
+        manager: screen_manager
+
+
+
+
+
+
+
+
+
+
+
+
+
+size: root.width, root.height
+        Image:
+            source: "photos/HomePage2.png"
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+        
+        MDFloatLayout:
+            size: root.width, root.height
+        
+            
+            MDRaisedButton:
+                id: "login"
+                text: "Login"
+                md_bg_color: (0,0,0,1)
+                pos_hint: {"x": 0.125, "y": 0.35}
+                size_hint: None, None
+                width: root.width*0.75
+                height: root.height*0.075
+                text_color: "white"
+                font_size: 56
+                bold: True
+                elevation: 4.5
+                shadow_offset: 0, 6
+                rounded_button: False
+                font_name: "Tesla"
+                on_press: 
+                    app.lol()
+                    login_scrs.current = "login"
+
+
+            
+                
+                
+
+            MDRaisedButton:
+                id: signup
+                text: "Sign Up"
+                
+                md_bg_color: (0,0,0,1)
+                pos_hint: {"x": 0.125, "y": 0.25}
+                size_hint: None, None
+                width: root.width*0.75
+                height: root.height*0.075
+                text_color: "white"
+                font_size: 56
+                bold: False
+                elevation: 4.5
+                shadow_offset: 0, 6
+                rounded_button: False
+                font_name: "Tesla"
+                on_press: login_scrs.current = "signup"

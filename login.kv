@@ -1,0 +1,80 @@
+MDScreen:
+    name: "login"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/backgroundf2.png"
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+        
+        MDFloatLayout:
+            size: root.width, root.height
+        
+            
+
+            MDTextField:
+                id: username
+                hint_text: "Username"
+                helper_text: "Username or Email"
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 600
+                pos_hint: {"x": 0.125, "y": 0.45}
+                hint_text_color_normal: (0,0,0,1)
+                line_color_normal: (0,0,0,1)
+
+            MDTextField:
+                id: password
+                hint_text: "Password"
+                helper_text: "Incorrect Password"
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 600
+                pos_hint: {"x": 0.125, "y": 0.35}
+                hint_text_color_normal: (0,0,0,1)
+                line_color_normal: (0,0,0,1)
+
+            MDRaisedButton:
+                text: "Login"
+                font_name: "Tesla"
+                md_bg_color: (0,0,0,1)
+                pos_hint: {"x": 0.125, "y": 0.25}
+                size_hint: None, None
+                width: root.width*0.75
+                height: root.height*0.075
+                text_color: "white"
+                font_size: 56
+                bold: True
+                elevation: 4.5
+                shadow_offset: 0, 6
+                on_press: app.login(username.text, password.text)
+
+            MDFlatButton:
+                text: "Don't have an account? Sign up!"
+                theme_text_color: "Custom"
+                text_color: (0,0,0,1)
+                pos_hint: {"x": 0.13, "y": 0.1}
+                font_size: 30
+                on_press: root.manager.current = "signup"
+                
+
+            MDFlatButton:
+                text: "Back"
+                theme_text_color: "Custom"
+                text_color: (0,0,0,1)
+                pos_hint: {"x": 0.05, "y": 0.917}
+                font_size: 30
+                on_press: root.manager.current = "main"
+
+
+        

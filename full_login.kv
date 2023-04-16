@@ -1,0 +1,1016 @@
+
+<ScreenStart>:
+    name: "start"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/HomePage2.png"
+            allow_stretch: False
+            pos_hint: {"x": -0.3, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+
+
+        MDFloatLayout:
+            size: root.width, root.height
+        
+            
+            MDRaisedButton:
+                id: "Enter"
+                text: "Get Started"
+                md_bg_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.07, "y": 0.25}
+                size_hint: None, None
+                width: root.width*0.25
+                height: root.height*0.05
+                text_color: "white"
+                font_size: 20
+                bold: True
+                elevation: 4.5
+                shadow_offset: 0, 6
+                rounded_button: False
+                font_name: "Tesla"
+                on_press: root.choose_entrance()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenMain>:
+    name: "main"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/HomePage2.png"
+            allow_stretch: False
+            pos_hint: {"x": -0.3, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+        
+        MDFloatLayout:
+            size: root.width, root.height
+        
+            
+            MDRaisedButton:
+                id: "login"
+                text: "Login"
+                md_bg_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.07, "y": 0.25}
+                size_hint: None, None
+                width: root.width*0.25
+                height: root.height*0.05
+                text_color: "white"
+                font_size: 28
+                bold: True
+                elevation: 4.5
+                shadow_offset: 0, 6
+                rounded_button: False
+                font_name: "Tesla"
+                on_press: root.go_to_login_screen()
+
+
+            
+                
+                
+
+            MDRaisedButton:
+                id: signup
+                text: "Sign Up"
+                
+                md_bg_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.07, "y": 0.35}
+                size_hint: None, None
+                width: root.width*0.25
+                height: root.height*0.05
+                text_color: "white"
+                font_size: 28
+                bold: False
+                elevation: 4.5
+                shadow_offset: 0, 6
+                rounded_button: False
+                font_name: "Tesla"
+                on_press: root.go_to_signup_screen()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenSignup>:
+    name: "signup"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/backgroundf2.png"
+            allow_stretch: False
+            pos_hint: {"x": -0.3, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+        
+        MDFloatLayout:
+            size: root.width, root.height
+        
+            
+
+            MDTextField:
+                id: username
+                hint_text: "Email"
+                helper_text: "Email"
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 200
+                pos_hint: {"x": 0.07, "y": 0.45}
+                hint_text_color_normal: (0,0,0,1)
+                line_color_normal: (203/255, 178/255, 106/255, 1)
+
+
+            MDTextField:
+                id: password
+                hint_text: "Password"
+                helper_text: "Incorrect Password"
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 200
+                pos_hint: {"x": 0.07, "y": 0.35}
+                hint_text_color_normal: (0,0,0,1)
+                line_color_normal: (203/255, 178/255, 106/255, 1)
+
+            MDRaisedButton:
+                text: "Sign Up"
+                font_name: "Tesla"
+                md_bg_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.07, "y": 0.25}
+                size_hint: None, None
+                width: root.width*0.25
+                height: root.height*0.05
+                text_color: "white"
+                font_size: 28
+                bold: True
+                elevation: 4.5
+                shadow_offset: 0, 6
+                on_release: root.signup2(username.text, password.text)
+
+            MDFlatButton:
+                text: "Want to learn more? Click here!"
+                theme_text_color: "Custom"
+                text_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.05, "y": 0.1}
+                font_size: 15
+                on_press: app.sm.current = "ScreenLogin"
+                
+
+            MDFlatButton:
+                text: "Back"
+                theme_text_color: "Custom"
+                text_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.01, "y": 0.9}
+                font_size: 15
+                on_press: app.sm.current = "ScreenMain"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenLogin>:
+    name: "learn_screen"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/backgroundf2.png"
+            allow_stretch: False
+            pos_hint: {"x": -0.3, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+        
+        MDFloatLayout:
+            size: root.width, root.height
+        
+            
+
+            MDTextField:
+                id: username
+                hint_text: "Username"
+                helper_text: "Username or Email"
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 200
+                pos_hint: {"x": 0.07, "y": 0.45}
+                hint_text_color_normal: (0,0,0,1)
+                line_color_normal: (203/255, 178/255, 106/255, 1)
+
+            MDTextField:
+                id: password
+                hint_text: "Password"
+                helper_text: "Incorrect Password"
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 200
+                pos_hint: {"x": 0.07, "y": 0.35}
+                hint_text_color_normal: (0,0,0,1)
+                line_color_normal: (203/255, 178/255, 106/255, 1)
+
+            MDRaisedButton:
+                text: "Login"
+                font_name: "Tesla"
+                md_bg_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.07, "y": 0.25}
+                size_hint: None, None
+                width: root.width*0.25
+                height: root.height*0.05
+                text_color: "white"
+                font_size: 28
+                bold: True
+                elevation: 4.5
+                shadow_offset: 0, 6
+                on_press: root.login(username.text, password.text)
+
+            MDFlatButton:
+                text: "Don't have an account? Sign up!"
+                theme_text_color: "Custom"
+                text_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.05, "y": 0.1}
+                font_size: 15
+                on_press: app.sm.current = "ScreenSignup"
+                
+
+            MDFlatButton:
+                text: "Back"
+                theme_text_color: "Custom"
+                text_color: (203/255, 178/255, 106/255, 1)
+                pos_hint: {"x": 0.01, "y": 0.9}
+                font_size: 15
+                on_press: app.sm.current = "ScreenMain"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenStartingInfo>:
+    
+    name: "starting_info"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/backgroundf2.png"
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+
+        MDFloatLayout:
+            size: root.width, root.height
+            id: chip_box
+
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.15, "center_y": .8}
+                size_hint: None, None
+                size: 75, 75
+                elevation: 4.5
+                disabled: True
+                disabled_color: (1/255,1/255,1/255,0)
+                md_bg_color_disabled: (1/255,1/255,1/255,0)
+
+                Image:
+                    
+				    id: my_image
+				    source: 'photos/calendar.png'
+				    center_x: self.parent.center_x
+				    center_y: self.parent.center_y
+				    size_hint: None, None
+                    width: 75
+                    height: 75
+                    allow_stretch: True
+                    keep_ratio: False
+
+            MDLabel:
+                text: "How many days do you\n workout a week?"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: "cbb26acc"
+                font_name: "Tesla"
+                font_size: 25
+                size_hint: None, None
+                size: 800, 200
+                pos_hint: {"center_x": 0.425, "center_y": .8}
+
+            MDTextField:
+                mode: "rectangle"
+                hint_text: "Please enter either 4, 5, or 6"
+                helper_text: "Your entry was not 4, 5, or 6"
+                text_color: 0, 0, 0, 1
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 600
+                pos_hint: {"x": 0.125, "y": 0.7}
+                hint_text_color_normal: "grey"
+                line_color_normal: "b49636"
+                background_color: (180/255,150/255,54/255,1)
+
+
+
+
+        
+
+
+
+
+
+        
+
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.15, "center_y": .6}
+                size_hint: None, None
+                size: 75, 75
+                elevation: 4.5
+                disabled: True
+                disabled_color: (1/255,1/255,1/255,0)
+                md_bg_color_disabled: (1/255,1/255,1/255,0)
+
+                Image:
+                    
+				    id: my_image
+				    source: 'photos/dumbell.png'
+				    center_x: self.parent.center_x
+				    center_y: self.parent.center_y
+				    size_hint: None, None
+                    width: 75
+                    height: 75
+                    allow_stretch: True
+                    keep_ratio: False
+
+            MDLabel:
+                text: "Do you have access to a gym\n that has basic equipment such as\n dumbells and barbells?"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: "cbb26acc"
+                font_name: "Tesla"
+                font_size: 25
+                size_hint: None, None
+                size: 800, 200
+                pos_hint: {"center_x": 0.55, "center_y": .6}
+
+            MDTextField:
+                mode: "rectangle"
+                hint_text: "Please enter either Yes or No"
+                helper_text: "Your entry was not Yes or No"
+                text_color: 0, 0, 0, 1
+                
+                helper_text_mode: "on_error"
+                multiline: False
+                size_hint_x: None
+                width: 600
+                pos_hint: {"x": 0.125, "y": 0.5}
+                hint_text_color_normal: "grey"
+                line_color_normal: "b49636"
+                background_color: (180/255,150/255,54/255,1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<WindowManager>:
+    
+    ScreenMain:
+        
+
+    ScreenLogin:
+
+    ScreenSignup:
+
+
+    ScreenSignup2:
+
+
+    ScreenDash:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenDash>
+    name: "dash"
+    size: root.width, root.height
+    Image:
+        source: "photos/backgroundf2.png"
+        allow_stretch: False
+        pos_hint: {"x": -0.3, "y": 0}
+        size_hint_y: None
+        height: root.height
+        size_hint_x: None
+        width: root.width
+        keep_ratio: False
+
+    MDFloatLayout:
+        
+        ScreenManager:
+            id: scr
+
+            
+            
+            
+            MDScreen:
+                name: "home"
+                MDLabel:
+                    text: "Home"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+                
+
+
+
+            MDScreen:
+                name: "form"
+                MDLabel:
+                    text: "Form"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+
+
+
+            MDScreen:
+                name: "history"
+                MDLabel:
+                    text: "History"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+
+
+
+            MDScreen:
+                name: "queries"
+                MDLabel:
+                    text: "Queries"
+                    pos_hint: {"center_y": 0.5}
+                    halign: "center"
+        
+        
+        NavBar:
+            size_hint: .35, .1
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            elevation: 4
+            md_bg_color: 1,1,1,1
+            radius: [16]
+            MDGridLayout:
+                cols: 4
+                size_hint_x: 0.9
+                spacing: 30
+                pos_hint: {"center_x": 0.45, "center_y": 0.4}
+
+                
+                
+                MDIconButton:
+                    id: home_icon
+                    icon: "home"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "home"
+
+
+                MDIconButton:
+                    id: form_icon
+                    icon: "form-select"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "form"
+
+
+                MDIconButton:
+                    id: history_icon
+                    icon: "history"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "history"
+
+                MDIconButton:
+                    id: queries_icon
+                    icon: "database-search"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,1
+                    on_release: scr.current = "queries"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenGoals>:
+    name: "goals"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/backgroundf2.png"
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+
+        MDFloatLayout:
+            size: root.width, root.height
+
+
+            MDLabel:
+                text: "Goals"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: "cbb26acc"
+                font_name: "Tesla"
+                font_size: 125
+                size_hint: None, None
+                size: 800, 200
+                pos_hint: {"x": 0.01, "y": .78}
+
+
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.25, "center_y": .625}
+                size_hint: None, None
+                size: 200, 200
+                elevation: 4.5
+                disabled: True
+                
+
+                
+
+            MDFlatButton:
+                text: "Build Muscle"
+                theme_text_color: "Custom"
+                text_color: (203/255,178/255,106/255,0.8)
+                pos_hint: {"center_x": 0.55, "y": 0.5625}
+                font_size: 50
+                padding: [200, 50, 16, 50]
+                halign: "right"
+                font_name: "Tesla"
+                on_press: root.manager.current = "starting_info"
+                
+            
+            
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.25, "center_y": .4}
+                size_hint: None, None
+                size: 200, 200
+                elevation: 4.5
+                disabled: True
+
+                
+
+            MDFlatButton:
+                text: "Get Shredded/\nGain Stamina"
+                theme_text_color: "Custom"
+                text_color: (203/255,178/255,106/255,0.8)
+                pos_hint: {"center_x": 0.55, "y": 0.3375}
+                font_size: 40
+                padding: [200, 50, 16, 50]
+                halign: "right"
+                font_name: "Tesla"
+                on_press: root.manager.current = "starting_info"
+
+
+            
+
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.25, "center_y": .2}
+                size_hint: None, None
+                size: 200, 200
+                elevation: 4.5
+                disabled: True
+                
+
+                
+
+            MDFlatButton:
+                text: "Build Strength"
+                theme_text_color: "Custom"
+                text_color: (203/255,178/255,106/255,0.8)
+                pos_hint: {"center_x": 0.55, "y": 0.135}
+                font_size: 42
+                padding: [200, 50, 16, 50]
+                halign: "right"
+                font_name: "Tesla"
+                on_press: root.manager.current = "starting_info"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ScreenExperienceLevel>:
+    name: "experience_level"
+
+    MDFloatLayout:
+        size: root.width, root.height
+        Image:
+            source: "photos/backgroundf2.png"
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+            size_hint_y: None
+            height: root.height
+            size_hint_x: None
+            width: root.width
+            keep_ratio: False
+
+        MDFloatLayout:
+            size: root.width, root.height
+
+
+            MDLabel:
+                text: "Experience"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: "cbb26acc"
+                font_name: "Tesla"
+                font_size: 80
+                size_hint: None, None
+                size: 800, 200
+                pos_hint: {"x": 0.01, "y": .825}
+
+            MDLabel:
+                text: "Level"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: "cbb26acc"
+                font_name: "Tesla"
+                font_size: 80
+                size_hint: None, None
+                size: 800, 200
+                pos_hint: {"x": 0.01, "y": .75}
+
+            
+
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.25, "center_y": .625}
+                size_hint: None, None
+                size: 200, 200
+                elevation: 4.5
+                disabled: True
+                disabled_color: (1/255,1/255,1/255,0)
+                md_bg_color_disabled: (1/255,1/255,1/255,0)
+
+                Image:
+				    id: my_image
+				    source: 'photos/beginner2.png'
+				    center_x: self.parent.center_x
+				    center_y: self.parent.center_y
+				    size_hint: None, None
+                    width: 225
+                    height: 200
+                    allow_stretch: True
+                    keep_ratio: False
+
+            MDFlatButton:
+                text: "Beginner"
+                theme_text_color: "Custom"
+                text_color: (180/255,150/255,54/255,1)
+                pos_hint: {"center_x": 0.55, "y": 0.5625}
+                font_size: 70
+                padding: [200, 50, 16, 50]
+                halign: "right"
+                font_name: "Tesla"
+                on_press: root.manager.current = "goals"
+                
+            
+            
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.25, "center_y": .425}
+                size_hint: None, None
+                size: 200, 200
+                elevation: 4.5
+                disabled: True
+                disabled_color: (1/255,1/255,1/255,0)
+                md_bg_color_disabled: (1/255,1/255,1/255,0)
+
+                Image:
+				    id: my_image
+				    source: 'photos/intermidiate.png'
+				    center_x: self.parent.center_x
+				    center_y: self.parent.center_y
+				    size_hint: None, None
+                    width: 225
+                    height: 200
+                    allow_stretch: True
+                    keep_ratio: False
+
+            MDFlatButton:
+                text: "Intermediate"
+                theme_text_color: "Custom"
+                text_color: (180/255,150/255,54/255,1)
+                pos_hint: {"center_x": 0.55, "y": 0.3625}
+                font_size: 50
+                padding: [200, 50, 16, 50]
+                halign: "right"
+                font_name: "Tesla"
+                on_press: root.manager.current = "goals"
+
+
+            
+
+            MDRaisedButton:
+                
+                
+                
+                pos_hint: {"center_x": 0.25, "center_y": .2}
+                size_hint: None, None
+                size: 200, 200
+                elevation: 4.5
+                disabled: True
+                disabled_color: (1/255,1/255,1/255,0)
+                md_bg_color_disabled: (1/255,1/255,1/255,0)
+                
+
+                Image:
+				    id: my_image
+				    source: 'photos/expert.png'
+				    center_x: self.parent.center_x
+				    center_y: self.parent.center_y
+				    size_hint: None, None
+                    width: 225
+                    height: 200
+                    allow_stretch: True
+                    keep_ratio: False
+
+            MDFlatButton:
+                text: "Expert"
+                theme_text_color: "Custom"
+                text_color: (180/255,150/255,54/255,1)
+                pos_hint: {"center_x": 0.55, "y": 0.135}
+                font_size: 80
+                padding: [200, 50, 16, 50]
+                halign: "right"
+                font_name: "Tesla"
+                on_press: root.manager.current = "goals"
+
+
+
+
+
